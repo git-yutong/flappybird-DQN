@@ -167,7 +167,7 @@ def train():
         if total_reward > best_reward and total_reward > 0:
             best_reward = total_reward
             torch.save(dqn.state_dict(), "flappy_bird_best.pth")
-            print(f"New best model saved with reward: {best_reward}")
+            print(f"New best model saved with reward: {best_reward:.2f}")
             
 
 if __name__ == "__main__":
