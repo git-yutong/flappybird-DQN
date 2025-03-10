@@ -53,7 +53,7 @@ class FlappyBirdEnv:
             self.pipe_x = 400
             self.pipe_height = random.randint(100, 300)
 
-        reward = 1
+        reward = 1 - abs(self.bird_y - (self.pipe_height + self.pipe_gap / 2)) * 0.01
         if self.bird_y > HEIGHT or self.bird_y < 0 or (
                 self.pipe_x < 50 and (self.bird_y < self.pipe_height or self.bird_y > self.pipe_height + self.pipe_gap)):
             self.done = True
