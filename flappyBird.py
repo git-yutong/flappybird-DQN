@@ -53,7 +53,7 @@ class FlappyBirdEnv:
             self.pipe_x = 400
             self.pipe_height = random.randint(100, 300)
 
-        reward = 1 - abs(self.bird_y - (self.pipe_height + self.pipe_gap / 2)) * 0.01
+        reward  = 1 - abs(self.bird_y - (self.pipe_height + self.pipe_gap / 2)) * 0.01
         if self.bird_y > HEIGHT or self.bird_y < 0 or (
                 self.pipe_x < 50 and (self.bird_y < self.pipe_height or self.bird_y > self.pipe_height + self.pipe_gap)):
             self.done = True
@@ -161,7 +161,7 @@ def train():
                 optimizer.step()
         
         epsilon = max(min_epsilon, epsilon * epsilon_decay)
-        print(f"Episode {episode+1}, Total Reward: {total_reward}, Epsilon: {epsilon:.3f}")
+        print(f"Episode {episode+1}, Total Reward: {total_reward:.2f}, Epsilon: {epsilon:.3f}")
         
         # 仅在达到更高奖励时保存模型并渲染
         if total_reward > best_reward and total_reward > 0:
