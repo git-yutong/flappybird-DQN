@@ -7,6 +7,7 @@
 
 
 python  flappyBird.py负责训练出合适的模型(可以一直训练)
+
 python  flappybirdtest.py 用来展示这个小鸟的行走过程
 
 
